@@ -11,9 +11,12 @@ import org.apache.http.util.EntityUtils;
 
 public class App 
 {
+	private static PropertiesHelper propertiesHelper = new PropertiesHelper("config.properties");
     public static void main( String[] args ) throws Exception
     {
-    	String myURL = "http://boards.4chan.org/";
+    	
+//    	String myURL = "http://boards.4chan.org/";
+    	String myURL = propertiesHelper.getPropertyValue("websiteURL");
     	String searchTerm = "delete";
     	String boardName = "b";
     	Scanner scanzor = new Scanner(System.in);
