@@ -8,10 +8,12 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
+import com.aankiel.properties.PropertiesHelper;
 
 public class App 
 {
-	private static PropertiesHelper propertiesHelper = new PropertiesHelper("config.properties");
+	private static final String filePath = App.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+	private static PropertiesHelper propertiesHelper = new PropertiesHelper(filePath + "config.properties");
     public static void main( String[] args ) throws Exception
     {
     	
